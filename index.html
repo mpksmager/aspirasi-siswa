@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/mpkhehe.png" type="image/x-icon">
+    <title>Majelis Perwakilan Kelas</title>
+    <style>
+        @font-face {
+          font-family: 'Lato'; /* Name for the font family */
+          src: url('font/Lato-Regular.ttf') format('truetype'); /* Path to your font file */
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Lato', Arial, sans-serif;
+
+            -webkit-user-select: none; /* Chrome, Safari */
+            -moz-user-select: none; /* Firefox */
+            user-select: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            background-image: url('images/mpkacara.jpeg');
+            background-size: cover;
+            color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 90vh;
+        }
+        body::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #222222e3;
+            z-index: -1;
+        }
+
+        .card {
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            min-width: 301px;
+            width: 50%;
+        }
+
+        .card h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            width: 100%;
+        }
+        .card p{
+            word-wrap: break-word;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 50%;
+            min-width: 175px;
+        }
+
+        .card a.button {
+            display: block;
+            width: 100%;
+            max-width: 394px;
+            background-color: #d9cec5;
+            color: #222121;
+            text-align: center;
+            margin-bottom: 1rem;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a.button:hover {
+            background-color: #eb3636;
+            color: #d9cec5;
+        }
+        .card .logo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            padding: 5px 10px;
+            width: fit-content;
+            height: fit-content;
+            background-color: #ffffff41;
+            border-radius: 20px;
+        }
+        .card .logo .log{
+            width: 25px;
+            height: 30px;
+            background-size: cover;
+            margin: 5px 15px;
+        }
+        .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+    .zoom-out {
+        animation: zoomOut 2s ease-out;
+    }
+    .ilang{
+        animation: ilang 1s ease-out;
+    }
+
+    @keyframes zoomOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+    }
+    @keyframes ilang {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    </style>
+</head>
+
+<body onselectstart="return false;" ondragstart="return false;">
+    <div class="loader">
+        <img src="images/mpk logo.png" alt="Loading...">
+    </div>
+    <div class="container">
+        <div class="card">
+            <h1>Aspirasi Siswa</h1>
+            <p>Klik sesuai jenis aspirasimu yaa!</p>
+            <a href="https://forms.gle/taaZbBFkhKjFJeoL6" target="_blank" class="button">Sarana Prasarana</a>
+            <a href="https://forms.gle/7vRnRRmDthBvMtAk9" target="_blank" class="button">Akademik</a>
+            <a href="https://forms.gle/8mH6mtqkLAnUhJ7L9" target="_blank" class="button">Non-Akademik</a>
+		<a href="https://forms.gle/hsZs1gmew1LLuRU98" target="_blank" class="button">Kinerja Osis</a>
+            <div class="logo">
+                <a href="http://belajar.sman1geger.sch.id/mpk/" target="_blank"><div class="log" style="background-image: url('images/mpk\ logo.png');"></div></a>
+                <a href="https://sman1geger.sch.id/" target="_blank"><div class="log" style="background-image: url('images/sma\ logo.png');"></div></a>
+            </div>
+        </div>
+        <br><a href="http://instagram.com/dzadafalab_4.0" target="_blank" style="text-decoration: none; color: #d9cec5;font-size: 0.9rem;">&copy; 2023 Dzadafa</a>
+    </div>
+    <script>
+        window.addEventListener("load", function () {
+            // Menghapus elemen loading setelah jeda waktu tertentu
+            var loaderimg = document.querySelector("img");
+            var loader = document.querySelector(".loader");
+            setTimeout(function(){
+                loaderimg.classList.add("zoom-out");
+            }, 1500)
+            
+            loader.addEventListener("animationend", function () {
+                loaderimg.style.display = "none";
+                loader.classList.add("ilang");
+                loader.addEventListener("animationend", function () {
+                    loader.style.display = "none";
+                });
+        });
+    });
+    </script>
+</body>
+
+</html>
